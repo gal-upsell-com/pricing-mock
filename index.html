@@ -306,7 +306,7 @@
 
   /* growth calculator (and matching invisible slot on other cards) */
   .calc-slot {
-    min-height: 84px;
+    min-height: 104px;
     margin-bottom: 18px;
   }
   .calc {
@@ -355,6 +355,13 @@
     font-weight: 500;
     color: var(--ink);
   }
+  .calc-help {
+    margin: 8px 0 0;
+    font-size: 11px;
+    line-height: 1.35;
+    color: var(--ink-3);
+    font-weight: 500;
+  }
 
   .cta-btn {
     width: 100%;
@@ -364,9 +371,16 @@
     font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    margin-bottom: 22px;
+    margin-bottom: 10px;
     transition: background 0.15s ease;
     cursor: pointer;
+  }
+  .trial-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-3);
+    font-weight: 500;
+    margin: 0 0 22px;
   }
   .cta-primary { background: var(--primary); color: var(--white); }
   .cta-primary:hover { background: var(--primary-dark); }
@@ -376,6 +390,16 @@
     border: 1.5px solid var(--primary);
   }
   .cta-secondary:hover { background: var(--primary); color: var(--white); }
+  .cta-btn:disabled {
+    background: var(--line);
+    color: var(--ink-3);
+    border-color: var(--line);
+    cursor: not-allowed;
+  }
+  .cta-btn:disabled:hover {
+    background: var(--line);
+    color: var(--ink-3);
+  }
 
   .feature-list {
     list-style: none;
@@ -656,7 +680,6 @@
     <!-- GROWTH -->
     <article class="tier" data-tier="growth">
       <h3 class="tier-name">Growth</h3>
-      <p class="tier-tagline">For stores from launch to 2,000 orders a month.</p>
 
       <div class="price-row">
         <span class="price-amount" id="growth-price">$3.99</span>
@@ -666,19 +689,20 @@
 
       <div class="calc-slot">
         <div class="calc">
-          <label for="growth-volume">Your monthly orders</label>
           <select id="growth-volume">
-            <option value="0"   selected>Up to 50 orders</option>
-            <option value="100">Up to 100 orders</option>
-            <option value="200">Up to 200 orders</option>
-            <option value="500">Up to 500 orders</option>
-            <option value="1000">Up to 1,000 orders</option>
-            <option value="2000">Up to 2,000 orders</option>
+            <option value="0"   selected>Up to 50</option>
+            <option value="100">Up to 100</option>
+            <option value="200">Up to 200</option>
+            <option value="500">Up to 500</option>
+            <option value="1000">Up to 1,000</option>
+            <option value="2000">Up to 2,000</option>
           </select>
+          <p class="calc-help">Monthly orders or generated revenue.</p>
         </div>
       </div>
 
       <button class="cta-btn cta-primary">Start Growth</button>
+      <p class="trial-note">14-day free trial</p>
 
       <div class="included-section">
         <span class="included-label">Included in every plan</span>
@@ -704,7 +728,6 @@
     <article class="tier featured" data-tier="scale">
       <div class="badge-popular">Most Popular</div>
       <h3 class="tier-name">Scale</h3>
-      <p class="tier-tagline">For growing brands serious about conversion rate.</p>
 
       <div class="price-row">
         <span class="price-amount" data-monthly="499" data-annual="399" data-annual-only>$399</span>
@@ -714,12 +737,13 @@
 
       <div class="calc-slot">
         <div class="calc">
-          <label>Your monthly orders</label>
-          <div class="calc-value">Up to 10,000 orders/mo</div>
+          <div class="calc-value">Up to 10,000</div>
+          <p class="calc-help">Monthly orders or generated revenue.</p>
         </div>
       </div>
 
       <button class="cta-btn cta-primary">Choose Scale</button>
+      <p class="trial-note">14-day free trial</p>
 
       <div class="included-section">
         <span class="included-label">Included in every plan</span>
@@ -746,7 +770,6 @@
     <!-- ELITE -->
     <article class="tier" data-tier="elite">
       <h3 class="tier-name">Elite</h3>
-      <p class="tier-tagline">For high-volume merchants who want a strategic partner.</p>
 
       <div class="price-row">
         <span class="price-amount" data-monthly="999" data-annual="799" data-annual-only>$799</span>
@@ -756,12 +779,13 @@
 
       <div class="calc-slot">
         <div class="calc">
-          <label>Your monthly orders</label>
-          <div class="calc-value">Up to 20,000 orders/mo</div>
+          <div class="calc-value">Up to 20,000</div>
+          <p class="calc-help">Monthly orders or generated revenue.</p>
         </div>
       </div>
 
       <button class="cta-btn cta-primary">Choose Elite</button>
+      <p class="trial-note">14-day free trial</p>
 
       <div class="included-section">
         <span class="included-label">Included in every plan</span>
@@ -789,7 +813,6 @@
     <!-- ENTERPRISE -->
     <article class="tier" data-tier="enterprise">
       <h3 class="tier-name">Enterprise</h3>
-      <p class="tier-tagline">For 20,000+ order stores with custom needs.</p>
 
       <div class="price-row">
         <span class="price-amount small">Custom</span>
@@ -798,12 +821,13 @@
 
       <div class="calc-slot">
         <div class="calc">
-          <label>Your monthly orders</label>
-          <div class="calc-value">20,000+ orders/mo</div>
+          <div class="calc-value">20,000+</div>
+          <p class="calc-help">Monthly orders or generated revenue.</p>
         </div>
       </div>
 
       <button class="cta-btn cta-secondary">Talk to Sales</button>
+      <p class="trial-note">14-day free trial</p>
 
       <div class="included-section">
         <span class="included-label">Included in every plan</span>
@@ -820,6 +844,7 @@
         <p class="inherits">Everything in <span>Elite</span>, plus:</p>
         <ul class="feature-list">
           <li>20,000+ orders/mo</li>
+          <li>Multi-store billing: one invoice across all your stores</li>
           <li>Alpha access + roadmap input</li>
         </ul>
       </div>
@@ -1126,6 +1151,15 @@
     });
     document.querySelectorAll('.price-sub[data-monthly]').forEach(el => {
       el.innerHTML = el.dataset[mode];
+    });
+
+    // disable CTAs for annual-only tiers (Scale, Elite) when monthly is selected
+    document.querySelectorAll('.tier').forEach(tier => {
+      const annualOnly = tier.querySelector('.price-amount[data-annual-only]');
+      const cta = tier.querySelector('.cta-btn');
+      if (annualOnly && cta) {
+        cta.disabled = mode === 'monthly';
+      }
     });
 
     // update Growth (depends on both billing + volume)
